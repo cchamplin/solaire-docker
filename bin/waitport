@@ -1,0 +1,13 @@
+#!/bin/bash
+
+host=$1
+port=$2
+tries=600
+if /opt/bin/waitcheck $host $port ; then
+  # Ready
+  echo "Done"
+  exit 0
+fi
+echo "Fail"
+# FAIL
+exit -1

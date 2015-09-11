@@ -17,7 +17,7 @@ RUN chown -R test:users /home/test/.ssh/
 
 ADD root /
 
-EXPOSE 22 443 80
+EXPOSE 22 443 80 9000
 
 ENTRYPOINT ["/init"]
 CMD []
