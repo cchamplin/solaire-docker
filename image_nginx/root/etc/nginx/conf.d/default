@@ -44,10 +44,10 @@ server {
 }
 
 upstream t1 {
-  server unix:/mnt/test1-php.sock;
+  server unix:/mnt/run/test1-php.sock;
 }
 
 upstream t2 {
-  server unix:/mnt/test2-php.sock;
+  server unix:/mnt/run/test2-php.sock;
 }
 
