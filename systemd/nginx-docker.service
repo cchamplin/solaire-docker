@@ -1,0 +1,10 @@
+[Unit]
+Description=nginx container
+
+[Service]
+ExecStart=/usr/bin/docker run --rm -v /opt/containers/test1/run/:/mnt/run -v /opt/containers/test1/www:/mnt/www -v /opt/containers/test1/authorized_keys:/home/test/.ssh/authorized_keys --name test_php1 php-test
+ExecStartPost=/opt/bin/waitcheck /opt/containers/test1/run/php.sock
+ExecStartPost=/opt/bin/set-server-info.sh test_php1
+
+
+ExecStop=/usr/bin/docker stop test_php1

@@ -1,0 +1,6 @@
+[Unit]
+Requires=nginx-docker.service
+After=nginx-docker.service
+
+[Service]
+ExecStart=/opt/bin/launcher.sh
